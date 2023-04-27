@@ -58,16 +58,23 @@ void Print(LinkList p)
     cout << endl;
 }
 
-ElementType MaxNode(List &p)
+int MaxNode(List &p)
 {
+    int res = 0, index = 0;
     ElementType max_val = 0;
     LinkList cur = p.next;
     while (cur)
     {
-        max_val = max(max_val, cur->data);
+        if (cur->data > max_val)
+        {
+            res = index;
+            max_val = cur->data;
+        }
+        
+        index++;
         cur = cur->next;
     }
-    return max_val;
+    return res;
 }
 
 int FindFailure(List& p)
@@ -89,7 +96,8 @@ int main()
     // Print(&li);
 
     // ElementType res = MaxNode(li);
-    ElementType res = FindFailure(stu);
+    int res = FindFailure(stu);
+    Print(&stu);
     cout << res << endl;
 
 

@@ -81,13 +81,13 @@ void NumSort(vector<int> &li)
 int main()
 {
     // 1
-    vector<int> liA = CreateList();
-    vector<int> liB = CreateList();
-    vector<int> liC = merge(&liA, &liB);
+    // vector<int> liA = CreateList();
+    // vector<int> liB = CreateList();
+    // vector<int> liC = merge(&liA, &liB);
     
-    Print(&liA);
-    Print(&liB);
-    Print(&liC);
+    // Print(&liA);
+    // Print(&liB);
+    // Print(&liC);
 
     // 2
     vector<int> liD = CreateList();

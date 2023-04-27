@@ -55,7 +55,7 @@ bool is_huiwen(void)
 
 int main()
 {
-    // 进制换算
+    // // 进制换算
     // int num;
     // cin >> num;
     // ten2any(num);

@@ -1,5 +1,6 @@
 #include "iostream"
 #include "stdlib.h"
+#include "string.h"
 
 using namespace std;
 
@@ -32,7 +33,7 @@ public:
     {
         tail->next = new Node<ElemType>;
         tail = tail->next;
-        tail->data = e;
+        strcpy(tail->data, e);
         tail->next = NULL;
     }
 
@@ -92,7 +93,7 @@ public:
     {
         for (int i = left; i < right; i++)
         {
-            cout << (char)data[i] << "  ";
+            cout << data[i] << "  ";
         }
         cout << endl;
     }
@@ -100,20 +101,18 @@ public:
     // 从键盘输入字符串
     void push_alpha(void)
     {
-        char tmp;
+        int tmp;
         while (cin >> tmp)
         {
-            // 1-9
-            if (tmp > 48 && tmp <= 48 + 9)
+            if (tmp > 0)
             {
                 this->pop_head();
             }
-            // a-z A-Z
-            else if ((tmp >= 65 && tmp <= 65 + 25) || (tmp >= 97 && tmp <= 97 + 25))
+            else if (tmp < 0)
             {
                 this->push_back(tmp);
             }
-            else if (tmp == 48)
+            else if (tmp == 0)
             {
                 break;
             }
@@ -125,15 +124,13 @@ public:
 int main()
 {
     // 循环队列
-    // Queue<char> q(10);
+    // Queue<int> q(10);
     // q.push_alpha();
     // 链队列
-    LinkQueue<char> q;
-    q.push('a');
-    q.push('b');
-    q.push('c');
-    q.push('d');
-    q.push('e');
+    LinkQueue<char[10]> q;
+    q.push("tom");
+    q.push("jack");
+    q.push("jim");
     q.pop();
 
     q.print();
